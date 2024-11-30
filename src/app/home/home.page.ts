@@ -54,7 +54,7 @@ export class HomePage implements OnInit {
     // Step 2: After 2 seconds, update the button text and hide the spinner
     setTimeout(() => {
       this.isSpinnerVisible = false;
-      this.buttonText = 'Thank You!';
+      this.buttonText = "Alright then, can't wait!";
     }, 2000);
 
     // Step 3: After 3 seconds, show the overlay (modal)

@@ -28,7 +28,7 @@ export class HomePage implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.showHeading = true;
-    }, 1500);
+    }, 1000);
   }
 
   // startTypingAnimation() {

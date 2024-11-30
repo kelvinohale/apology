@@ -1,20 +1,102 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div id="page-con">
+    <div class="content">
+      <h1 class="heading" [class.show]="showHeading">
+        Dear Ese, this is for you...
+      </h1>
+      <img src="/assets/anime-rb.png" class="anime-character" alt="anime-img" />
+      <ion-button
+        *ngIf="showContinueBtn"
+        (click)="showBody()"
+        [disabled]="false"
+        type="button"
+      >
+        <ion-spinner
+          *ngIf="showContinueSpinner; else continue"
+          name="crescent"
+        ></ion-spinner>
+        <ng-template #continue>Continue</ng-template>
+      </ion-button>
+      <div *ngIf="showRest">
+        <div class="body-main" [class.show]="showContinue">
+          <div class="messages-con">
+            <div class="message">
+              <p>Yeah, you were right</p>
+              <p>
+                I know I was acting up unnecessarily and I was being a complete
+                d*ck. What I did concerning the whole you ghosting on WhatsApp
+                was also completely uncalled for also...
+              </p>
+            </div>
+            <div class="message">
+              <p>
+                I completely understand you and why you were even tired of the
+                whole stuff lol and I'm really sorry for adding to your
+                frustration. I've given it a lot of thought I probably even have
+                read the whole "Scroll. Since this week, Uche I've been
+                reassuring you that everything's fine and we're good..." like
+                300 times now and each time I regret my behaviour.
+              </p>
+            </div>
+            <div class="message">
+              <p>
+                I'm also deeply sorry if I've been unknowingly putting you
+                through anything that feels remotely similar to what Abdul did
+                and I'm glad you said that cause it gave me a chance to reflect.
+                I really do not want to put you through the same pain again
+                that's the last thing I'd ever want.
+              </p>
+            </div>
+            <div class="message">
+              <p>
+                Look I apologise for how I've been behaving these last few days,
+                I know I've been out of line and I just want you to find a way
+                and should I say forgive me now lol. I f*cking love you Ese
+                whether you believe it or not I do deeply and yes I know you
+                said friends but friends can love still innit?
+              </p>
+            </div>
+            <div class="message">
+              <p>
+                Please let's put all this behind us and grow stronger from here.
+                I miss you and I want my Ese back.
+              </p>
+              <p>
+                Well with all these said, this is me apologizing for everything.
+                I'm sincerely sorry and I hope we can move forward and no Ese
+                I'm not looking for a reason to leave I've found everything I am
+                looking for in a person, in a friend, lol even in a girlfriend!
+                xoxo 💕
+              </p>
+            </div>
+            <div class="message">
+              <p>Happy New Month My love</p>
+            </div>
+            <div class="message">
+              <p>Yours,</p>
+              <p>Uchenna</p>
+            </div>
+          </div>
+          <p class="footer">A lot more chapters awaits us 👇</p>
+          <ion-button
+            [disabled]="isButtonDisabled"
+            (click)="onButtonClick()"
+            class="forgiven-btn"
+            type="button"
+          >
+            <ion-spinner
+              *ngIf="isSpinnerVisible; else text"
+              name="crescent"
+            ></ion-spinner>
+            <ng-template #text>{{ buttonText }}</ng-template>
+          </ion-button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Dark overlay -->
+  <div class="overlay" [class.active]="isOverlayActive">
+    <span (click)="toggleOverlay()" class="close-overlay">X</span>
+    <img src="/assets/hug-gif-2.gif" alt="hug gif" class="gif-center" />
   </div>
 </ion-content>

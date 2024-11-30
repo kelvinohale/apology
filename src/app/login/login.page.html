@@ -1,0 +1,29 @@
+<ion-content [fullscreen]="true" class="login-content">
+  <div class="login-form">
+    <ion-item>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input
+        type="text"
+        placeholder="Enter your password"
+        [(ngModel)]="password"
+      ></ion-input>
+    </ion-item>
+    <ion-button
+      expand="block"
+      class="login-button"
+      [disabled]="isButtonDisabled"
+      (click)="onLogin()"
+    >
+      <ion-spinner
+        *ngIf="isSpinnerVisible"
+        name="lines-small"
+        slot="start"
+      ></ion-spinner>
+      {{ buttonText }}
+    </ion-button>
+    <span>
+      Use our general social password as password <br />
+      hint: r7
+    </span>
+  </div>
+</ion-content>

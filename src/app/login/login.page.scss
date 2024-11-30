@@ -1,0 +1,39 @@
+.login-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #f9f9f9; /* Light neutral background */
+
+  .login-form {
+    width: 90%;
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: white; /* Neutral form background */
+
+    ion-item {
+      --highlight-color-focused: #000; /* Black input highlight */
+      margin-bottom: 16px;
+    }
+
+    ion-button.login-button {
+      --background: #333; /* Neutral dark gray for the button */
+      --background-hover: #555; /* Slightly lighter on hover */
+      --color: #fff; /* White text for contrast */
+      font-weight: bold;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+  }
+}
+
+span {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  line-height: 1.6;
+  font-size: 14px;
+  margin-top: 13px;
+  display: block;
+}

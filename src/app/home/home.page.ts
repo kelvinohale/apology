@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {
+    // Check if the user is logged in
+    const loggedIn = localStorage.getItem('loggedin');
+    if (loggedIn !== 'true') {
+      // Redirect to the login page if not logged in
+      this.router.navigate(['/login']);
+    }
+  }
   showContinue = false;
   isOverlayActive = false;
   isButtonDisabled = false; // To disable the button
@@ -20,7 +28,7 @@ export class HomePage implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.showHeading = true;
-    }, 2000);
+    }, 1500);
   }
 
   // startTypingAnimation() {

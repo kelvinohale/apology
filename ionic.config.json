@@ -1,0 +1,7 @@
+{
+  "name": "apology",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
